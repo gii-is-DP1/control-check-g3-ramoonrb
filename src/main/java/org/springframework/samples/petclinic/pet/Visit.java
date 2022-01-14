@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 package org.springframework.samples.petclinic.pet;
-
+import org.springframework.samples.petclinic.recoveryroom.RecoveryRoom;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -24,6 +24,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.samples.petclinic.model.BaseEntity;
@@ -38,6 +39,10 @@ import org.springframework.samples.petclinic.recoveryroom.RecoveryRoom;
 @Table(name = "visits")
 public class Visit extends BaseEntity {
 
+	@ManyToOne(optional = true)
+	RecoveryRoom recoveryroom;
+	
+	
 	/**
 	 * Holds value of property date.
 	 */

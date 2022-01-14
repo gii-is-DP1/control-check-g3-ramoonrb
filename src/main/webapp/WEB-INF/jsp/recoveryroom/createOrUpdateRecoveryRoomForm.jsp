@@ -16,7 +16,7 @@
         <h2>
             Recovery Room
         </h2>
-        <form:form modelAttribute="recoveryRoom"
+        <form:form modelAttribute="recoveryRoom" 
                    class="form-horizontal">
             <input type="hidden" name="id" value="${recoveryRoom.id}"/>
             <div class="form-group has-feedback">
@@ -24,7 +24,7 @@
                 <petclinic:inputField label="Room size in m2" name="size"/>
                 <petclinic:checkboxField label="Secure room?" name="secure"/>
                 <div class="control-group">
-                    <petclinic:selectField name="type" label="Room type " names="${types}" size="5"/>
+                    <petclinic:selectField name="type" label="Room type " names="${recoveryRoomType}" size="5"/>
                 </div>
             </div>
             <div class="form-group">

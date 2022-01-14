@@ -2,21 +2,32 @@ package org.springframework.samples.petclinic.recoveryroom;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+@Service
 public class RecoveryRoomService {
+	
+	@Autowired
+	private RecoveryRoomRepository roomrepository;
+	
     public List<RecoveryRoom> getAll(){
-        return null;
+        List<RecoveryRoom> lista = roomrepository.findAll();
+        return lista;
     }
 
     public List<RecoveryRoomType> getAllRecoveryRoomTypes(){
-        return null;
+        List<RecoveryRoomType> lista = roomrepository.findAllRecoveryRoomTypes();
+        return lista;
     }
 
     public RecoveryRoomType getRecoveryRoomType(String typeName) {
-        return null;
+        RecoveryRoomType tipo = roomrepository.getRecoveryRoomType(typeName);
+        return tipo;
     }
 
     public List<RecoveryRoom> getRecoveryRoomsBiggerThan(double size) {
-        return null;
+        List<RecoveryRoom> lista = roomrepository.findBySizeMoreThan(size);
+        return lista;
     }
 
     public RecoveryRoom save(RecoveryRoom p) {
