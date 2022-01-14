@@ -36,6 +36,6 @@ public class RecoveryRoom {
 	
 	@ManyToOne(optional=false)
 	@NotNull
-	@Transient
+	//@Transient
     RecoveryRoomType roomType;
 }
